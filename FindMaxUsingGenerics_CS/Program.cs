@@ -10,10 +10,10 @@ namespace FindMaxUsingGenerics_CS
 /// </summary>
     class Program
     {
-        //UC2 to display maximum between three float
+        //UC3 to display maximum between three strings
         static void Main(string[] args)
         {
-            Console.WriteLine("The maximum value is:" + FindMaximum.FindMax(12f,30f,25f));
+            Console.WriteLine("The maximum value is:" + FindMaximum.FindMax("Apple", "Peach", "Banana"));
             Console.ReadLine();
         }
     }
