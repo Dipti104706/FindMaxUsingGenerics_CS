@@ -30,13 +30,5 @@ namespace FindMaxUsingGenerics_CS
             T[] sortedArray = Sort(this.array);
             return sortedArray[sortedArray.Length - 1];
         }
-        /// <summary>
-        /// Prints the maximum.
-        /// </summary>
-        public void PrintMax()
-        {
-            var max = MaxValue(this.array);
-            Console.WriteLine("The maximum value is:" + max);
-        }
     }
 }
