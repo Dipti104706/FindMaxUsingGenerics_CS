@@ -14,6 +14,8 @@ namespace FindMaxUsingGenerics_CS
         static void Main(string[] args)
         {
             int[] intArray = { 10, 55, 25, 5, 42 };
+            PrintArrayGenericClass<int> genericInt = new PrintArrayGenericClass<int>(intArray);
+            genericInt.ToPrint();
             GenericArrayMax<int> final = new GenericArrayMax<int>(intArray);
             final.PrintMax();
             Console.ReadLine();
