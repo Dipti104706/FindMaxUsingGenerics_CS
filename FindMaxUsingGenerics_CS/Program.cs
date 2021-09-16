@@ -10,10 +10,10 @@ namespace FindMaxUsingGenerics_CS
 /// </summary>
     class Program
     {
-        //UC3 to display maximum between three strings
+        //UC4 to Extent find Max method to take more than three parameter
         static void Main(string[] args)
         {
-            Console.WriteLine("The maximum value is:" + FindMaximum.FindMax("Apple", "Peach", "Banana"));
+            Console.WriteLine("Maximum is:" + new FindMaximum.FindMax<int>(10, 15, 5);
             Console.ReadLine();
         }
     }
