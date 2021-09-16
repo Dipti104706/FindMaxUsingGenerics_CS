@@ -3,9 +3,16 @@ using System.Collections.Generic;
 
 namespace FindMaxUsingGenerics_CS
 {
-    class FindMaximum
+    class FindMaximumGenerics<T> where T:IComparable
     {
-        public static int FindMax<T>(T first, T second, T third)
+        public T first, second, third;
+        public FindMaximumGenerics(T first,T second, T third)
+        {
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+        public static T FindMax(T first, T second, T third)
         {
             if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
             {
@@ -22,7 +29,7 @@ namespace FindMaxUsingGenerics_CS
             else
             {
                 Console.WriteLine("two or more numbers are equal");
-                return 0;
+                return default;
             }
         }
     }
