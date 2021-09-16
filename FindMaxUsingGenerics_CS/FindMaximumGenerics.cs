@@ -3,34 +3,40 @@ using System.Collections.Generic;
 
 namespace FindMaxUsingGenerics_CS
 {
-    class FindMaximumGenerics<T> where T:IComparable
+    class GenericArrayMax<T> where T : IComparable
     {
-        public T first, second, third;
-        public FindMaximumGenerics(T first,T second, T third)
+        public T[] array;
+        public GenericArrayMax(T[] array)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+            this.array = array;
         }
-        public static T FindMax(T first, T second, T third)
+        /// <summary>
+        /// Sorts the specified values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        public T[] Sort(T[] values)
         {
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                return first;
-            }
-            else if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                return second;
-            }
-            else if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0)
-            {
-                return third;
-            }
-            else
-            {
-                Console.WriteLine("two or more numbers are equal");
-                return default;
-            }
+            Array.Sort(values);
+            return values;
+        }
+        /// <summary>
+        /// Retun the Maximum value.
+        /// </summary>
+        /// <param name="Values">The values.</param>
+        /// <returns></returns>
+        public T MaxValue(params T[] Values)
+        {
+            T[] sortedArray = Sort(this.array);
+            return sortedArray[sortedArray.Length - 1];
+        }
+        /// <summary>
+        /// Prints the maximum.
+        /// </summary>
+        public void PrintMax()
+        {
+            var max = MaxValue(this.array);
+            Console.WriteLine("The maximum value is:" + max);
         }
     }
 }

@@ -13,7 +13,9 @@ namespace FindMaxUsingGenerics_CS
         //UC4 to Extent find Max method to take more than three parameter
         static void Main(string[] args)
         {
-            Console.WriteLine("Maximum is:" + new FindMaximumGenerics<int>(10, 15, 5));
+            int[] intArray = { 10, 55, 25, 5, 42 };
+            GenericArrayMax<int> final = new GenericArrayMax<int>(intArray);
+            final.PrintMax();
             Console.ReadLine();
         }
     }
